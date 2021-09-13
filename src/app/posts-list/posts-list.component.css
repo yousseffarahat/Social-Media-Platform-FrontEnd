@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  margin-left: 20px;
+  font-size: 14px;
+  width: 90%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.posts-list-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}

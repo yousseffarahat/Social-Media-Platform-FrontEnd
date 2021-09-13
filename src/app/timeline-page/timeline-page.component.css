@@ -1,0 +1,71 @@
+.timeline-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.timeline-cards {
+  max-width: 400px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  justify-content: center;
+}
+
+.timeline-comment-cards {
+  background-color: #F5F5F5;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  justify-content: center;
+}
+
+mat-card-subtitle::after {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 2px;
+  border-bottom: 2px solid grey;
+}
+
+
+::ng-deep .mat-checkbox-inner-container {
+  display: none !important;
+}
+
+.timeline-like-button-active{
+  color: blue;
+}
+
+.timeline-comments-title {
+  content: "";
+  display: block;
+  width: 70px;
+  padding-top: 2px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid grey;
+}
+
+.timeline-post-image {
+  width: 100%;
+  height: 100%;
+}
+
+.timeline-see-more-button {
+  display: block;
+  left: 40%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.timeline-comment-input {
+  width: 100%;
+}

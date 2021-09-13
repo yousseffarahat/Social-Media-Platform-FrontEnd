@@ -1,0 +1,42 @@
+<div class="register-container">
+  <form [formGroup]="registerForm">
+    <mat-card>
+      <mat-card-title>Register your Account:</mat-card-title>
+      <div class="register-form-div">
+        <div class="register-form-line">
+          <mat-form-field hintLabel="Maximum 20 characters" appearance="outline" style=" width: 45%">
+            <mat-label>Enter your First Name</mat-label>
+            <input formControlName="firstName" matInput #firstName maxlength="20" placeholder="First Name..." name="firstName">
+            <mat-hint align="end">{{firstName.value?.length || 0}}/20</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field hintLabel="Maximum 20 characters" appearance="outline" style="margin-left: 20px; width: 45%">
+            <mat-label>Enter your Last Name</mat-label>
+            <input formControlName="lastName" matInput #lastName maxlength="20" placeholder="Last Name..." name="lastName">
+            <mat-hint align="end">{{lastName.value?.length || 0}}/20</mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="register-form-line">
+          <mat-form-field hintLabel="Maximum 20 characters" appearance="outline" style="width: 95%">
+            <mat-label>Enter your Username</mat-label>
+            <input formControlName="username" (change)="resetAvailability()" matInput #username maxlength="20" placeholder="Username..." name="username">
+            <mat-hint align="end">{{username.value?.length || 0}}/20</mat-hint>
+            <button matSuffix (click)="checkUsernameAvailability()" mat-raised-button color="primary" type="button">check availability</button>
+          </mat-form-field>
+        </div>
+        <div class="register-form-line">
+          <mat-form-field hintLabel="Minimum 6 characters" appearance="outline" style="width: 95%">
+            <mat-label>Enter your Password</mat-label>
+            <input formControlName="password" matInput #password minlength="6" placeholder="Password..." name="password"
+            type="password">
+            <mat-hint align="end">{{password.value?.length || 0}}/6</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="register-action-buttons">
+        <button mat-raised-button color="warn">Cancel</button>
+        <button (click)="onSubmit()" [disabled]="!userNameAvailable || registerForm.invalid" mat-raised-button color="primary">Register</button>
+      </div>
+    </mat-card>
+  </form>
+</div>

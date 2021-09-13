@@ -1,0 +1,8 @@
+.navbar-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-space-between{
+  flex: 1 1 auto;
+}

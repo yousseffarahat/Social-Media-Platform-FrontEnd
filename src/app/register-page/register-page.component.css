@@ -1,0 +1,34 @@
+.register-form-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.register-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.register-form-line {
+  margin-top: 20px;
+}
+mat-card-title::after {
+  content: "";
+  display: block;
+  width: 200px;
+  padding-top: 10px;
+  border-bottom: 2px solid #3F51B5;
+}
+.mat-raised-button{
+  margin-left: 20px;
+}
+
+.register-action-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}

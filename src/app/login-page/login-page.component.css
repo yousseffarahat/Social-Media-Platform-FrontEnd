@@ -1,0 +1,38 @@
+.login-form-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.login-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.login-form-line {
+  margin-top: 20px;
+}
+mat-card-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  padding-top: 10px;
+  border-bottom: 2px solid #3F51B5;
+}
+.mat-raised-button{
+  margin-left: 20px;
+}
+
+.login-action-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.mat-form-field{
+  width: 300px;
+}

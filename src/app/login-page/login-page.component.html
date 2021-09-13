@@ -1,0 +1,28 @@
+<div class="login-container">
+  <form [formGroup]="loginForm">
+    <mat-card>
+      <mat-card-title>Login:</mat-card-title>
+      <div class="login-form-div">
+        <div class="login-form-line">
+          <mat-form-field hintLabel="Maximum 20 characters" appearance="outline">
+            <mat-label>Enter your Username</mat-label>
+            <input formControlName="username" matInput #username maxlength="20" placeholder="Username..." name="username">
+            <mat-hint align="end">{{username.value?.length || 0}}/20</mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="login-form-line">
+          <mat-form-field hintLabel="Minimum 6 characters" appearance="outline">
+            <mat-label>Enter your Password</mat-label>
+            <input formControlName="password" matInput #password minlength="6" placeholder="Password..." name="password"
+                   type="password">
+            <mat-hint align="end">{{password.value?.length || 0}}/6</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="login-action-buttons">
+        <button mat-raised-button color="warn">Cancel</button>
+        <button (click)="onSubmit()" mat-raised-button color="primary">login</button>
+      </div>
+    </mat-card>
+  </form>
+</div>

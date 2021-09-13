@@ -1,0 +1,85 @@
+.profile-container{
+  display: flex;
+}
+
+.profile-details-column {
+  margin-top: 30px;
+  margin-left: 20px;
+  width: 30%;
+}
+
+
+.profile-like-button-active{
+  color: blue;
+}
+
+.profile-posts-container {
+  width: 50%;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.profile-comments-title {
+  content: "";
+  display: block;
+  width: 70px;
+  padding-top: 2px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid grey;
+}
+
+
+.profile-cards {
+  max-width: 400px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  justify-content: center;
+}
+
+.profile-comment-cards {
+  background-color: #F5F5F5;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+}
+
+mat-card-subtitle::after {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 2px;
+  border-bottom: 2px solid grey;
+}
+
+
+::ng-deep .mat-checkbox-inner-container {
+  display: none !important;
+}
+
+.profile-post-image {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-see-more-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.timeline-comment-input {
+  width: 100%;
+}

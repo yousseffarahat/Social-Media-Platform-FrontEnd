@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <button *ngIf="authService.getValidated()=='true'" routerLink="/timeline" mat-icon-button>
+    <mat-icon>home</mat-icon>
+  </button>
+  <button *ngIf="authService.getValidated()!='true'" routerLink="/login" mat-button>
+    Login
+  </button>
+  <button *ngIf="authService.getAdmin()" routerLink="/posts" mat-button>
+    Posts
+  </button>
+  <button *ngIf="authService.getAdmin()"routerLink="/comments" mat-button>
+    Comments
+  </button>
+  <button *ngIf="authService.getAdmin()" routerLink="/users" mat-button>
+    Users
+  </button>
+
+  <span class="navbar-space-between"></span>
+  <button *ngIf="authService.getValidated()!='true'" routerLink="/register" mat-button>
+    Register
+  </button>
+  <button *ngIf="authService.getValidated()=='true'"  routerLink="/profile" mat-icon-button>
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <button *ngIf="authService.getValidated()=='true'"  (click)="logOut()" mat-icon-button>
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>

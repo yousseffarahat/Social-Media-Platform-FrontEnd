@@ -1,0 +1,54 @@
+<div class="profile-container">
+  <div class="flex-row profile-details-column">
+    <mat-card>
+      <mat-card-title>{{user.firstName + ' ' + user.lastName}}'s Profile</mat-card-title>
+    </mat-card>
+    <app-friends-list></app-friends-list>
+    <app-all-users-list></app-all-users-list>
+    <app-accepted-friends-list></app-accepted-friends-list>
+  </div>
+
+  <div class="profile-posts-container">
+    <mat-card style="margin-top: 30px;">
+      <mat-card-title >{{user.firstName + ' ' + user.lastName}}'s Posts</mat-card-title>
+    </mat-card>
+    <div *ngFor="let post of postsList" >
+      <mat-card class="profile-cards">
+        <mat-card-header>
+          <mat-card-title>{{post.userFirstName+ ' ' + post.userLastName}}</mat-card-title>
+        </mat-card-header>
+        <img class="profile-post-image" *ngIf="post.attachment!=null && post.attachment !=''" [src]="'data:image/jpg;base64,' + post.attachment">
+        <mat-card-content>
+          <p>
+            {{post.content}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <mat-checkbox class="timeline-like-button" [checked]="checkLikes(post)" (change)="likePost(post)">
+            {{post.likes.length || ''}} <mat-icon [ngClass]="getThumbsUpIconClass(post)">thumb_up</mat-icon>
+          </mat-checkbox>
+        </mat-card-actions>
+        <span class="profile-comments-title">Comments:</span>
+        <div *ngFor="let comment of post.comments">
+          <mat-card class="profile-comment-cards">
+            <mat-card-subtitle>{{comment.firstName + ' ' + comment.lastName}}:</mat-card-subtitle>
+            <p>
+              {{comment.content}}
+            </p>
+          </mat-card>
+        </div>
+        <mat-form-field hintLabel="Maximum 200 characters" appearance="fill">
+          <mat-label>Enter your Comment</mat-label>
+          <textarea class="timeline-comment-input" [(ngModel)]="post.tempComment" matInput maxlength="200" placeholder="Write a Comment..." name="comment">
+        </textarea>
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="submitComment(post)">
+            <mat-icon>send</mat-icon>
+          </button>
+        </mat-form-field>
+      </mat-card>
+    </div>
+    <button class="timeline-see-more-button"  (click)="getPosts()"
+            *ngIf="postsList.length>0 && postsList.length<totalPostsNumber" mat-stroked-button>See More</button>
+
+  </div>
+</div>

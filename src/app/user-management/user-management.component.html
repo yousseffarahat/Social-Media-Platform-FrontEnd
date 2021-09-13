@@ -1,0 +1,44 @@
+<mat-card class="user-management-list-card">
+  <mat-card-title>User Management:</mat-card-title>
+  <div class="mat-z8">
+    <table mat-table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> First Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="active">
+        <th mat-header-cell *matHeaderCellDef> Active </th>
+        <td mat-cell *matCellDef="let row"> <mat-checkbox disabled="true" [checked]="row.activated"></mat-checkbox> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let row">
+          <div class="user-management-list-button-container">
+            <button *ngIf="row.activated" mat-mini-fab color="warn" (click)="deactivateUser(row)" mat-icon-button>
+              <mat-icon>visibility_off</mat-icon>
+            </button>
+            <button *ngIf="!row.activated" mat-mini-fab color="primary" style="background-color: green;" (click)="activateUser(row)" mat-icon-button>
+              <mat-icon>visibility_on</mat-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No friend requests to show</td>
+      </tr>
+    </table>
+
+  </div>
+</mat-card>

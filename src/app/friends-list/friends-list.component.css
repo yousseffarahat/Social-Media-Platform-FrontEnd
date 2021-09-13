@@ -1,0 +1,30 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  margin-left: 20px;
+  font-size: 14px;
+  width: 90%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.friends-list-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.friends-list-card {
+  margin-top: 20px;
+}
+mat-card-title::after {
+  content: "";
+  display: block;
+  width: 180px;
+  padding-top: 10px;
+  border-bottom: 2px solid #3F51B5;
+}
